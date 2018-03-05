@@ -28,3 +28,7 @@ function get_parent_set (subset) {
         return undefined;
     return parentMap.get(subset.ekn_id);
 }
+
+function get_tag_map () {
+    return tagMap;
+}
