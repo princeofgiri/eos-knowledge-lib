@@ -120,6 +120,19 @@ AX_PKG_CHECK_MODULES([EKN_RENDERER], [glib-2.0 gio-2.0 gobject-2.0 json-glib-1.0
 # -------------
 AX_CODE_COVERAGE
 
+# Substitutions for defines
+AC_ARG_WITH([mathjax-dir], AS_HELP_STRING([--with-mathjax-dir],
+    [Use mathjax from a location besides the default /usr/share]),
+    [MATHJAXDIR=$withval],
+    [MATHJAXDIR=/usr/share/javascript/mathjax])
+AC_MSG_CHECKING([for mathjax javsacript library])
+if test -d $MATHJAXDIR; then
+    AC_MSG_RESULT([yes])
+    AC_SUBST([MATHJAXDIR])
+else
+    AC_MSG_ERROR([Cannot find mathjax package])
+fi
+
 AC_CACHE_SAVE
 
 # Output
