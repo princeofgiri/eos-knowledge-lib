@@ -10,6 +10,9 @@
     <file preprocess="xml-stripblanks">EknRuntimeDocumentViewer.ui</file>
     <file preprocess="xml-stripblanks">EknMediaBin.ui</file>
     <file>ekn-media-bin.css</file>
+    <file>broadway/broadway.js</file>
+    <file>broadway/rawinflate.min.js</file>
+    <file>broadway/client.html</file>
   </gresource>
 
   <gresource prefix="/com/endlessm/knowledge-private/scalable/actions">

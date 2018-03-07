@@ -29,6 +29,8 @@ if [ "$RUN_PROFILE_FILE" != "" ]; then
     export EOS_PROFILE="capture:$RUN_PROFILE_FILE"
 fi
 
+eos-broadway-window
+
 if [ "$#" -lt 2 ]; then
     echo "Run this script by passing it an app ID and a gresource file"
     exit 1

@@ -236,6 +236,13 @@ eosknowledgeprivate_sources = \
 	lib/eosknowledgeprivate/ekn-runtime-document-viewer.c \
 	lib/eosknowledgeprivate/ekn-media-bin.h \
 	lib/eosknowledgeprivate/ekn-media-bin.c \
+	lib/eosknowledgeprivate/broadway/broadway-buffer.c \
+	lib/eosknowledgeprivate/broadway/broadway-buffer.h \
+	lib/eosknowledgeprivate/broadway/broadway-output.c \
+	lib/eosknowledgeprivate/broadway/broadway-output.h \
+	lib/eosknowledgeprivate/broadway/broadway-protocol.h \
+	lib/eosknowledgeprivate/ekn-broadway-window.c  \
+	lib/eosknowledgeprivate/ekn-broadway-window.h \
 	$(NULL)
 
 # Endless Knowledge Apps GUI library
@@ -298,6 +305,17 @@ libscrollplugin_la_LIBADD = $(SCROLL_PLUGIN_LIBS)
 libscrollplugin_la_LDFLAGS = -module -avoid-version -no-undefined
 
 # # # EXAMPLES # # #
+bin_PROGRAMS = eos-broadway-window
+
+eos_broadway_window_SOURCES = examples/eos-broadway-window.c
+eos_broadway_window_CPPFLAGS = \
+	$(EOS_KNOWLEDGE_PRIVATE_CFLAGS) \
+	-I$(top_srcdir)/lib/eosknowledgeprivate/ \
+	$(NULL)
+eos_broadway_window_LDADD = \
+	$(EOS_KNOWLEDGE_PRIVATE_LIBS) \
+	$(top_builddir)/libeosknowledgeprivate.la \
+	$(NULL)
 
 noinst_PROGRAMS = eos-player
 
